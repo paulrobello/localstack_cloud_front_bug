@@ -1,0 +1,6 @@
+name: cf-error-handler-bug
+runtime:
+  name: nodejs
+  options:
+    nodeargs: "--trace-warnings"
+description: Create cf error handler bug test

@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+
+  localstack:
+    container_name: "localstack-fdp"
+    image: localstack/localstack:latest
+    network_mode: bridge
+    ports:
+      - "127.0.0.1:53:53"                # only required for Pro
+      - "127.0.0.1:53:53/udp"            # only required for Pro
+      - "127.0.0.1:443:443"              # only required for Pro
+      - "127.0.0.1:4510-4530:4510-4530"  # only required for Pro
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4571:4571"
+    environment:
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+      - LAMBDA_EXECUTOR=docker-reuse
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - LAMBDA_REMOTE_DOCKER=true
+      - DEFAULT_REGION=us-west-2
+      - LOCALSTACK_API_KEY=xxxxx
+    volumes:
+      - "$PWD/localstack_tmp:/tmp/localstack/data"
+      - "/var/run/docker.sock:/var/run/docker.sock"

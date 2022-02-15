@@ -1,0 +1,22 @@
+{
+  "name": "cf_error_handler_bug",
+  "scripts": {
+    "build-shared": "cd ../iac-shared && yarn run build"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.10",
+    "@types/uuid": "^8.3.4",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudfront": "=3.48.0",
+    "@aws-sdk/client-cognito-identity-provider": "=3.48.0",
+    "@aws-sdk/credential-providers": "=3.48.0",
+    "@pulumi/aws": "^4.35.0",
+    "@pulumi/awsx": "^0.32.0",
+    "@pulumi/postgresql": "^3.3.0",
+    "@pulumi/pulumi": "^3.22.1",
+    "@pulumi/random": "^4.3.1",
+    "dotenv": "^14.3.0"
+  }
+}
